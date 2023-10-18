@@ -30,8 +30,8 @@ User Story 4: Product Data Collection
 
 Structure:
 
-           We will be using Python as our programming language, HTML, CSS & JS for the UI 
-           implementation and PostgreSQL/ MySQL as the database.
+We will be using Python as our programming language, HTML, CSS & JS for the UI implementation and PostgreSQL/ MySQL as the database.
+
 Snehil is responsible for managing user registration and the development of the dashboard i.e. the user story 1. 
 Taariq's role involves gathering and presenting product information, including pricing data for specific items. The objective is to enable users to compare current prices across multiple websites. Additionally, Taariq will be working on implementing a user interface, which encompasses user story 2.
 Manisha is tasked with designing the database schema for storing user registration details and product-related data.
