@@ -1,19 +1,18 @@
+# Project Planning of Estimate Price Tracker
 
-Project Planning of Estimate Price Tracker
-
-Features:
+## Features:
 Create a dashboard for users to register.
 Implementing the ability to filter products for comparison based on price.
 Display prices from various sites for the selected product and provide the respective product links.
 Maintain a history of user searches.
 
-MVP:
+## MVP:
 Creating the user registration page and user dashboard.
 Select the sites which need to be compared and tracked.
 Collect the product data of prices that need to be tracked.
 Design a database to store the data.
 
-User Stories:
+## User Stories:
 
 User Story 1: User Registration and Dashboard
   As a developer, I want to create a User Registration form for users to sign up.
@@ -28,7 +27,7 @@ User Story 4: Product Data Collection
   pricing, for the given item, enabling me to compare current prices across various 
   websites.
 
-Structure:
+## Structure:
 
 We will be using Python as our programming language, HTML, CSS & JS for the UI implementation and PostgreSQL/ MySQL as the database.
 
