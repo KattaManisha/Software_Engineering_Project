@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.nav-item {
+  justify-content: end;
+}
+
+a .navbar-brand {
+  color: cadetblue;
+  font-size: small;
+}
+
+.main-container {
+  background-color: cadetblue;
+  height: 800px;
+}
