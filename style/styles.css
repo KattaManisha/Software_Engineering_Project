@@ -20,3 +20,56 @@ a .navbar-brand {
   background-color: cadetblue;
   height: 800px;
 }
+
+#signupButton {
+  width: 60%;
+  border-radius: 50%;
+}
+
+#signupButton:hover {
+  background-color: cadetblue;
+  color: black;
+}
+
+#loginButton {
+  width: 60%;
+  border-radius: 50%;
+}
+
+#loginButton:hover {
+  background-color: cadetblue;
+  color: black;
+}
+
+.signUpLink {
+  text-align: center;
+  font-size: medium;
+}
+
+.close {
+  color: cadetblue;
+  background-color: white;
+  border: none;
+  font-size: 30px;
+}
+
+.name-label {
+  margin-left: 50px;
+}
+.modal-body .md-form {
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.modal-body #orangeForm-name,
+.modal-body #orangeForm-email,
+.modal-body #orangeForm-pass {
+  margin-bottom: 0;
+  padding-right: 80px;
+}
+
+.modal-body .md-form input {
+  width: 80%;
+  margin-left: 50px;
+}
