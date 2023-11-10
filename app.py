@@ -39,12 +39,27 @@ def create_users_table(conn):
     except (Exception, psycopg2.Error) as error:
         print("Error while creating the table:", error)
 
+def email_exists(conn, email):
+    try:
+        cursor = conn.cursor()
+        check_email_query = "SELECT * FROM se_project.users WHERE email = %s"
+        cursor.execute(check_email_query, (email,))
+        existing_email = cursor.fetchone()
+        return existing_email is not None
+    except (Exception, psycopg2.Error) as error:
+        print("Error while checking if email exists:", error)
+        return False
+
 # Function to register a new user
 def register_user(conn, username, first_name, last_name, email, password):
     conn = connect_to_db()
     if conn:
         try:
             cursor = conn.cursor()
+            
+             # Check if the email already exists
+            if email_exists(conn, email):
+                return False  # Email already exists, registration failed
 
             # Define the query and its parameters
             insert_user_query = """
