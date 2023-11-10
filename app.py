@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
-import bcrypt
 
 app = Flask(__name__)
+
 
 # Function to establish a database connection
 def connect_to_db():
@@ -46,15 +46,12 @@ def register_user(conn, username, first_name, last_name, email, password):
         try:
             cursor = conn.cursor()
 
-            # Hash the password
-            hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-
             # Define the query and its parameters
             insert_user_query = """
                 INSERT INTO se_project.users (username, first_name, last_name, email, password)
                 VALUES (%s, %s, %s, %s, %s)
             """
-            query_params = (username, first_name, last_name, email, hashed_password)
+            query_params = (username, first_name, last_name, email, password)
 
             # Execute the query
             cursor.execute(insert_user_query, query_params)
@@ -75,12 +72,12 @@ def login_user(email, password):
         try:
             cursor = conn.cursor()
 
-            # Query the database to get the stored hashed password
+            # Query the database to get the stored password
             get_password_query = "SELECT password FROM se_project.users WHERE email = %s"
             cursor.execute(get_password_query, (email,))
-            hashed_password_in_db = cursor.fetchone()
+            stored_password = cursor.fetchone()
 
-            if hashed_password_in_db and bcrypt.checkpw(password.encode('utf-8'), hashed_password_in_db[0].encode('utf-8')):
+            if stored_password and password == stored_password[0]:
                 return True
         except (Exception, psycopg2.Error) as error:
             print("Error while handling user login:", error)
@@ -115,7 +112,7 @@ def register():
 
 # Handle other HTTP methods gracefully by returning an error response.
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -125,6 +122,8 @@ def login():
             return "Login successful"
         else:
             return "Invalid login"
+    elif request.method == 'GET':
+        return "Method Not Allowed", 405
 
 if __name__ == "__main__":
     app.run(debug=True)
