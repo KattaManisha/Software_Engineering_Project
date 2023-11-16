@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimate Price Tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/styles.css') }}" />
+    <script defer src="{{ url_for('static', filename='index.js') }}"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <section class="main-container2">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4 fixed top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EstiMateIt</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  id="navbarDropdownMenuLink"
+                  aria-current="page"
+                  href="#"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Categories</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Sub-item 1</a></li>
+                  <li><a class="dropdown-item" href="#">Sub-item 2</a></li>
+                  <li><a class="dropdown-item" href="#">Sub-item 3</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="navbar-brand dropdown-toggle"
+                  id="navbarDropdownProfileMenuLink"
+                  aria-current="page"
+                  href="#"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img
+                    src="{{ url_for('static', filename='assets/icons/user.jpg') }}"
+                    alt="User-profile logo"
+                    width="25"
+                    height="25"
+                    class="rounded-pill" />
+
+                  User Profile
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="{{ url_for('user_profile')}}"
+                      >View Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/logout" id="logoutBtn"
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <h1 class="title">Estimate Price Tracker</h1>
+    </section>
+  </body>
+</html>

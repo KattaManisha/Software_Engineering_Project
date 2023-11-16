@@ -12,12 +12,12 @@ p {
 }
 
 a .navbar-brand {
-  color: cadetblue;
+  color: teal;
   font-size: small;
 }
 
 .main-container {
-  background-color: cadetblue;
+  background-color: white;
   height: 800px;
 }
 
@@ -27,7 +27,7 @@ a .navbar-brand {
 }
 
 #signupButton:hover {
-  background-color: cadetblue;
+  background-color: teal;
   color: black;
 }
 
@@ -37,7 +37,7 @@ a .navbar-brand {
 }
 
 #loginButton:hover {
-  background-color: cadetblue;
+  background-color: teal;
   color: black;
 }
 
@@ -47,7 +47,7 @@ a .navbar-brand {
 }
 
 .close {
-  color: cadetblue;
+  color: teal;
   background-color: white;
   border: none;
   font-size: 30px;
@@ -72,4 +72,35 @@ a .navbar-brand {
 .modal-body .md-form input {
   width: 80%;
   margin-left: 50px;
+}
+
+.carousel-indicators {
+  bottom: 20px;
+}
+
+.carousel-inner {
+  height: 200px;
+  width: 100px;
+  text-align: center;
+}
+
+.main-container {
+  background-color: teal;
+}
+.main-container2 {
+  background-color: white;
+}
+
+#websiteTitle {
+  margin-left: 20px;
+}
+
+#img-ebay {
+  align-items: center;
+  padding: 0;
+}
+
+#carouselExampleDark {
+  align-items: center;
+  width: 500px;
 }

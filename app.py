@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import psycopg2
 
 app = Flask(__name__)
-
+app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I' #TODO Replace this with your own generated key
 
 # Function to establish a database connection
 def connect_to_db():
@@ -139,6 +139,23 @@ def login():
             return "Invalid login"
     elif request.method == 'GET':
         return "Method Not Allowed", 405
+
+@app.route('/user-home')
+def user_home():
+    #Rendering User's home page
+    return render_template('user_home.html')
+
+@app.route('/user_profile')
+def user_profile():
+    #Redirecting to user profile
+    return render_template('user_profile.html')
+
+@app.route('/logout')
+def logout():
+    # Perform logout actions, e.g., clear the session
+    session.clear()
+    # Redirect the user to the home page or login page
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.run(debug=True)
