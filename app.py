@@ -4,6 +4,10 @@ import psycopg2
 app = Flask(__name__)
 app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I' #TODO Replace this with your own generated key
 
+# Access the secret key from the app context
+secret_key = app.config['SECRET_KEY']
+print(secret_key)
+
 # Function to establish a database connection
 def connect_to_db():
     try:
@@ -100,6 +104,32 @@ def login_user(email, password):
             conn.close()
     return False
 
+# Function to fetch user data from the database
+def get_user_from_database(email):
+    conn = connect_to_db()
+    if conn:
+        try:
+            cursor = conn.cursor()
+
+            # Query the database to get user data by email
+            get_user_query = "SELECT username, first_name, last_name, email FROM se_project.users WHERE email = %s"
+            cursor.execute(get_user_query, (email,))
+            user_data = cursor.fetchone()
+
+            if user_data:
+                user = {
+                    'username': user_data[0],
+                    'first_name': user_data[1],
+                    'last_name': user_data[2],
+                    'email': user_data[3]
+                }
+                return user
+        except (Exception, psycopg2.Error) as error:
+            print("Error while fetching user data from the database:", error)
+        finally:
+            conn.close()
+    return None
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -134,7 +164,8 @@ def login():
         password = request.form['password']
 
         if login_user(email, password):
-            return "Login successful"
+            session['email'] = email  # Store the email in the session upon successful login
+            return redirect(url_for('user_profile'))  # Redirect to the user profile page
         else:
             return "Invalid login"
     elif request.method == 'GET':
@@ -147,8 +178,18 @@ def user_home():
 
 @app.route('/user_profile')
 def user_profile():
-    #Redirecting to user profile
-    return render_template('user_profile.html')
+    # Retrieve the email from the session if it exists
+    email = session.get('email')
+    email = "hope@gmail.com"
+
+    if email:
+        user = get_user_from_database(email)
+        if user:
+            return render_template('user_profile.html', user=user)
+        else:
+            return "User not found"
+    else:
+        return redirect(url_for('login')) 
 
 @app.route('/logout')
 def logout():
