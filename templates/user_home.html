@@ -6,11 +6,13 @@
     <title>Estimate Price Tracker</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style/styles.css') }}" />
+      href="{{ url_for('static', filename='style/styles.css') }}"
+    />
     <script defer src="{{ url_for('static', filename='index.js') }}"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <section class="main-container2">
@@ -24,7 +26,8 @@
             data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -38,12 +41,14 @@
                   href="#"
                   aria-haspopup="true"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   Categories</a
                 >
                 <ul
                   class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink">
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
                   <li><a class="dropdown-item" href="#">Sub-item 1</a></li>
                   <li><a class="dropdown-item" href="#">Sub-item 2</a></li>
                   <li><a class="dropdown-item" href="#">Sub-item 3</a></li>
@@ -59,19 +64,22 @@
                   href="#"
                   aria-haspopup="true"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   <img
                     src="{{ url_for('static', filename='assets/icons/user.jpg') }}"
                     alt="User-profile logo"
                     width="25"
                     height="25"
-                    class="rounded-pill" />
+                    class="rounded-pill"
+                  />
 
                   User Profile
                 </a>
                 <ul
                   class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink">
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
                   <li>
                     <a class="dropdown-item" href="{{ url_for('user_profile')}}"
                       >View Profile</a
@@ -91,6 +99,75 @@
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <h1 class="title">Estimate Price Tracker</h1>
+
+      <!-- carousel of images -->
+      <div
+        id="carouselExampleDark"
+        class="carousel carousel-dark slide mx-auto"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img
+              src="{{ url_for('static', filename='assets/images/ebay.png') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Ebay logo"
+            />
+          </div>
+
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/amazon.png') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-dark"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-dark"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </section>
   </body>
 </html>

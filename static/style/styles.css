@@ -81,7 +81,7 @@ a .navbar-brand {
 .carousel-inner {
   height: 200px;
   width: 100px;
-  text-align: center;
+  padding-left: 30%;
 }
 
 .main-container {
@@ -102,5 +102,52 @@ a .navbar-brand {
 
 #carouselExampleDark {
   align-items: center;
-  width: 500px;
+  width: 50%;
+}
+
+.main-container {
+  background-color: white;
+  height: 800px;
+}
+
+.profile-container {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.profile-info-table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.profile-info-table tr {
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-info-table td {
+  padding: 5px;
+}
+
+.profile-info-table td:first-child {
+  font-weight: bold;
+}
+
+.profile-actions {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.profile-actions button {
+  padding: 5px 10px;
+  background-color: teal;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
 }
