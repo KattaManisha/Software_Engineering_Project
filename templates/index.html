@@ -49,9 +49,9 @@
                   class="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <li><a class="dropdown-item" href="#">Sub-item 1</a></li>
-                  <li><a class="dropdown-item" href="#">Sub-item 2</a></li>
-                  <li><a class="dropdown-item" href="#">Sub-item 3</a></li>
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><a class="dropdown-item" href="#">Clothing and Fashion</a></li>
+                <li><a class="dropdown-item" href="#">Watches</a></li>
                 </ul>
               </li>
               <li class="nav-item justify-content-end">
@@ -294,7 +294,142 @@
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <h1 class="title">Estimate Price Tracker</h1>
+      <div
+        id="carouselExampleDark"
+        class="carousel carousel-dark slide mx-auto"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
 
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-current="true"
+            aria-label="Slide 2"
+          ></button>
+
+          <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-current="true"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="3"
+          aria-current="true"
+          aria-label="Slide 4"
+        ></button>
+        <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="4"
+        aria-current="true"
+        aria-label="Slide 5"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="5"
+        aria-current="true"
+        aria-label="Slide 6"
+      ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img
+              src="{{ url_for('static', filename='assets/images/mobile.png') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Ebay logo"
+            />
+          </div>
+
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/laptop.jpeg') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+
+          
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/appreals.jpg') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/shoes.jpg') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/digitalWatch.jpeg') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="{{ url_for('static', filename='assets/images/analogWatch.png') }}"
+              class="d-block w-50 text-center"
+              height="150px"
+              width="450px"
+              alt="Amazon logo"
+            />
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-dark"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-dark"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
      
     </section>
   </body>
