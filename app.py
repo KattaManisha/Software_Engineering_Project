@@ -84,6 +84,53 @@ def register_user(conn, username, first_name, last_name, email, password):
             conn.close()
     return False
 
+def user_exists(conn, username):
+    try:
+        cursor = conn.cursor()
+        check_user_query = "SELECT * FROM se_project.users WHERE username = %s"
+        cursor.execute(check_user_query, (username,))
+        existing_user = cursor.fetchone()
+        return existing_user is not None
+    except (Exception, psycopg2.Error) as error:
+        print("Error while checking if user exists:", error)
+        return False
+
+# Function to update user-info
+def update_user(conn, username, first_name, last_name, email):
+    conn = connect_to_db()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            
+             # Check if the user already exists
+             
+            if user_exists(conn, username):
+                return False  # user already exists
+
+            # Define the query and its parameters
+            update_user_query = """
+                UPDATE se_project.users
+                SET
+                  username= %s,
+                  first_name= %s,
+                  last_name=%s
+                WHERE
+                  email=%s;
+            """
+            query_params = (username, first_name, last_name, email)
+
+            # Execute the query
+            cursor.execute(update_user_query, query_params)
+
+            conn.commit()
+            cursor.close()
+            return True
+        except (Exception, psycopg2.Error) as error:
+            print("Error while updating the user:", error)
+        finally:
+            conn.close()
+    return False
+
 # Function to handle user login
 def login_user(email, password):
     conn = connect_to_db()
@@ -165,7 +212,7 @@ def login():
 
         if login_user(email, password):
             session['email'] = email  # Store the email in the session upon successful login
-            return redirect(url_for('user_profile'))  # Redirect to the user profile page
+            return redirect(url_for('user_home'))  # Redirect to the user profile page
         else:
             return "Invalid login"
     elif request.method == 'GET':
@@ -180,7 +227,7 @@ def user_home():
 def user_profile():
     # Retrieve the email from the session if it exists
     email = session.get('email')
-    email = "hope@gmail.com"
+    
 
     if email:
         user = get_user_from_database(email)
@@ -189,7 +236,25 @@ def user_profile():
         else:
             return "User not found"
     else:
-        return redirect(url_for('login')) 
+        return redirect(url_for('home')) 
+    
+@app.route('/update_user', methods=['POST'])
+def update():
+    if request.method == 'POST':
+        username = request.form['username']
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        email=session.get('email')
+        
+
+        conn = connect_to_db()
+
+        if conn:
+            if update_user(conn, username, first_name, last_name, email ):
+                return redirect(url_for('user_profile'))
+            
+            else:
+                return "updation failed"    #Return a failure response
 
 @app.route('/logout')
 def logout():
@@ -200,3 +265,5 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+
