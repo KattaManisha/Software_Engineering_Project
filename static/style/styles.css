@@ -137,12 +137,14 @@ a .navbar-brand {
   font-weight: bold;
 }
 
-.profile-actions {
+.profile-actions,
+.profile-forgot {
   margin-top: 10px;
   text-align: center;
 }
 
-.profile-actions button {
+.profile-actions button,
+.profile-forgot button {
   padding: 5px 10px;
   background-color: teal;
   color: #fff;
@@ -150,4 +152,36 @@ a .navbar-brand {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+}
+
+.card-group {
+  margin-left: 10%;
+}
+
+#firstCard {
+  margin-right: 10px;
+}
+
+#secondCard {
+  margin-right: 10px;
+}
+
+.productsTitle {
+  margin-left: 2%;
+}
+
+.card-img-top {
+  padding: 10px;
+  border: 1px solid #8888;
+  border-radius: 20px;
+}
+
+#updateLink:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+
+#forgotPassword:hover {
+  background-color: black;
+  color: whitesmoke;
 }
