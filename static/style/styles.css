@@ -156,14 +156,33 @@ a .navbar-brand {
 
 .card-group {
   margin-left: 10%;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 #firstCard {
   margin-right: 10px;
 }
 
+#fourthCard {
+  margin-left: 10px;
+}
+
 #secondCard {
   margin-right: 10px;
+}
+
+#seventhCard {
+  margin-left: 10px;
+}
+
+#sixthCard {
+  margin-left: 10px;
 }
 
 .productsTitle {
@@ -194,6 +213,15 @@ a .navbar-brand {
   display: inline-block;
 }
 
+.productTitle2 {
+  display: inline-block;
+  margin-left: 10%;
+}
+
 .btn-warning {
-  margin-left: 20%;
+  align-items: center;
+}
+
+.card-title {
+  white-space: normal;
 }
