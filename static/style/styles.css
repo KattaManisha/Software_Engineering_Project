@@ -151,3 +151,16 @@ a .navbar-brand {
   cursor: pointer;
   width: 100%;
 }
+
+.ebay-gif-container{
+  max-width: 250px;
+  width: 100%;
+  float: right;
+  
+}
+
+.amazon-gif-container{
+  max-width: 250px;
+  width: 100%;
+  float: left;
+}
