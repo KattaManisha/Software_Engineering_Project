@@ -44,11 +44,24 @@
                 <ul
                   class="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Electronics</a></li>
-                  <li><a class="dropdown-item" href="#">Watches</a></li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0)"
+                      id="electronics"
+                      >Electronics</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/watches" id="watches"
+                      >Watches</a
+                    >
+                  </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Clothing and Fashion</a>
+                    <a class="dropdown-item" href="/clothing" id="clothing"
+                      >Clothing and Fashion</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -155,7 +168,7 @@
         </div>
       </div>
 
-      <h2 class="productsTitle"><u>Products</u></h2>
+      <h2 class="productsTitle"><u> All Products</u></h2>
 
       <div class="card-group">
         <div
@@ -165,12 +178,15 @@
           <div class="card-header">Watches</div>
           <img
             src="{{ url_for('static', filename='assets/images/wristWatch.jpg') }}"
-            height="200px"
+            height="250px"
             width="auto"
             class="card-img-top"
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Wrist Watch</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -181,12 +197,15 @@
           <div class="card-header">Smartphone</div>
           <img
             src="{{ url_for('static', filename='assets/images/pixel7a.jpg') }}"
-            height="200px"
+            height="250px"
             width="auto"
             class="card-img-top"
             alt="Google Pixel 7a Photo" />
           <div class="card-body">
             <h5 class="card-title">Google Pixel 7a</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -197,12 +216,15 @@
           <div class="card-header">Men's Football Cleat</div>
           <img
             src="{{ url_for('static', filename='assets/images/footballCleats.jpg') }}"
-            height="200px"
+            height="250px"
             width="auto"
             class="card-img-top"
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Sport shoes</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -213,12 +235,15 @@
           <div class="card-header">Women's Shirt</div>
           <img
             src="{{ url_for('static', filename='assets/images/shirt.jpg') }}"
-            height="200px"
+            height="250px"
             width="auto"
             class="card-img-top"
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Shirts</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
       </div>
@@ -228,7 +253,7 @@
           class="card border border-info shadow-0 bg-light mb-3"
           id="firstCard"
           style="max-width: 18rem">
-          <div class="card-header">Lenovo Thinkpad Laptop</div>
+          <div class="card-header">Laptop</div>
           <img
             src="{{ url_for('static', filename='assets/images/lenovoLaptop.jpg') }}"
             height="250px"
@@ -236,7 +261,10 @@
             class="card-img-top"
             alt="Watches Photo" />
           <div class="card-body">
-            <h5 class="card-title">Analog Watch</h5>
+            <h5 class="card-title">Lenovo Thinkpad Laptop</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -252,7 +280,10 @@
             class="card-img-top"
             alt="Google Pixel 7a Photo" />
           <div class="card-body">
-            <h5 class="card-title">Google Pixel 7a</h5>
+            <h5 class="card-title">IPhone 13</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -269,6 +300,9 @@
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Red Sweater</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
 
@@ -285,6 +319,9 @@
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Shirts</h5>
+            <button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button>
           </div>
         </div>
       </div>

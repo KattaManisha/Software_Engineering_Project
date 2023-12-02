@@ -12,6 +12,33 @@ function init() {
     modal.show();
   }
 
+  // function loadInnerPage() {
+  //   // Use the Fetch API to get the content of the new HTML file
+  //   fetch('/electronics')
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.text();
+  //     })
+  //     .then((data) => {
+  //       // Inject the fetched HTML content into a container element on the current page
+  //       var container = document.getElementById('content-container');
+  //       if (container) {
+  //         container.innerHTML = data;
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching inner page:', error);
+  //     });
+  // }
+
+  // // Attach the function to a button click or any other trigger
+  // var loadButtonelex = document.getElementById('electronics');
+  // if (loadButtonelex) {
+  //   loadButtonelex.addEventListener('click', loadInnerPage);
+  // }
+
   // Define the function to navigate to the user"s home page
   function goToUserHomePage() {
     console.log('Button clicked!'); // For testing purposes
@@ -39,6 +66,45 @@ function init() {
       // Perform the logout action here, e.g., by redirecting to a logout endpoint
       window.location.href = '/logout';
     });
+  }
+
+  function goToElexPage() {
+    console.log('Button clicked!'); // For testing purposes
+    // Redirect to the user"s home page
+    window.location.href = '/electronics'; // Replace with the actual URL for the user"s home page
+  }
+
+  var electronicsButton = document.getElementById('electronics');
+  if (electronicsButton) {
+    electronicsButton.addEventListener('click', goToElexPage);
+  } else {
+    console.error('Elex page not found.');
+  }
+
+  function goToWatchesPage() {
+    console.log('Button clicked!'); // For testing purposes
+    // Redirect to the user"s home page
+    window.location.href = '/watches'; // Replace with the actual URL for the user"s home page
+  }
+
+  var watchesButton = document.getElementById('watches');
+  if (watchesButton) {
+    watchesButton.addEventListener('click', goToWatchesPage);
+  } else {
+    console.error('Watches page not found.');
+  }
+
+  function goToClothingPage() {
+    console.log('Button clicked!'); // For testing purposes
+    // Redirect to the user"s home page
+    window.location.href = '/clothing'; // Replace with the actual URL for the user"s home page
+  }
+
+  var clothingButton = document.getElementById('clothing');
+  if (clothingButton) {
+    clothingButton.addEventListener('click', goToClothingPage);
+  } else {
+    console.error('Clothing page not found.');
   }
 
   // Attach click event listeners to the signup and login links

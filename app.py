@@ -255,6 +255,21 @@ def update():
             
             else:
                 return "updation failed"    #Return a failure response
+            
+@app.route('/electronics')
+def electronics():
+    #Rendering electronics page
+    return render_template('electronics.html')
+
+@app.route('/clothing')
+def clothing():
+    #Rendering clothing page
+    return render_template('clothing.html')
+
+@app.route('/watches')
+def watches():
+    #Rendering watches page
+    return render_template('watches.html')
 
 @app.route('/logout')
 def logout():

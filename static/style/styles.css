@@ -17,7 +17,7 @@ a .navbar-brand {
 }
 
 .main-container {
-  background-color: white;
+  background-color: whitesmoke;
   height: 800px;
 }
 
@@ -176,6 +176,10 @@ a .navbar-brand {
   border-radius: 20px;
 }
 
+.siteDescription {
+  margin-left: 5%;
+}
+
 #updateLink:hover {
   background-color: black;
   color: whitesmoke;
@@ -184,4 +188,12 @@ a .navbar-brand {
 #forgotPassword:hover {
   background-color: black;
   color: whitesmoke;
+}
+
+#productsTitle {
+  display: inline-block;
+}
+
+.btn-warning {
+  margin-left: 20%;
 }
