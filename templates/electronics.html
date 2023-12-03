@@ -23,25 +23,6 @@
       <h2 class="productsTitle mt-3"><u> Electronics</u></h2>
       <hr />
       <div class="card-group">
-        <!-- <div
-          class="card border border-info shadow-0 bg-light mb-3"
-          id="firstCard"
-          style="max-width: 18rem">
-          <div class="card-header">Watches</div>
-          <img
-            src="{{ url_for('static', filename='assets/images/wristWatch.jpg') }}"
-            height="250px"
-            width="auto"
-            class="card-img-top"
-            alt="Watches Photo" />
-          <div class="card-body">
-            <h5 class="card-title">Wrist Watch</h5>
-            <button type="button" class="btn btn-warning" id="compareButton">
-              Compare Prices
-            </button>
-          </div>
-        </div> -->
-
         <div
           class="card border border-info shadow-0 bg-light mb-3"
           id="firstCard"
@@ -55,9 +36,11 @@
             alt="Google Pixel 7a Photo" />
           <div class="card-body">
             <h5 class="card-title">Google Pixel 7a</h5>
-            <button type="button" class="btn btn-warning" id="compareButton">
-              Compare Prices
-            </button>
+            <a href="/fetch-home"
+              ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a
+            >
           </div>
         </div>
 
@@ -74,9 +57,11 @@
             alt="Watches Photo" />
           <div class="card-body">
             <h5 class="card-title">Lenovo Thinkpad Laptop</h5>
-            <button type="button" class="btn btn-warning" id="compareButton">
-              Compare Prices
-            </button>
+            <a href="/fetch-home"
+              ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a
+            >
           </div>
         </div>
 
@@ -93,9 +78,11 @@
             alt="Google Pixel 7a Photo" />
           <div class="card-body">
             <h5 class="card-title">Apple IPhone 13</h5>
-            <button type="button" class="btn btn-warning" id="compareButton">
-              Compare Prices
-            </button>
+            <a href="/fetch-home">
+              <button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a
+            >
           </div>
         </div>
       </div>

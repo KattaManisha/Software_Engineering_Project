@@ -12,33 +12,6 @@ function init() {
     modal.show();
   }
 
-  // function loadInnerPage() {
-  //   // Use the Fetch API to get the content of the new HTML file
-  //   fetch('/electronics')
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return response.text();
-  //     })
-  //     .then((data) => {
-  //       // Inject the fetched HTML content into a container element on the current page
-  //       var container = document.getElementById('content-container');
-  //       if (container) {
-  //         container.innerHTML = data;
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching inner page:', error);
-  //     });
-  // }
-
-  // // Attach the function to a button click or any other trigger
-  // var loadButtonelex = document.getElementById('electronics');
-  // if (loadButtonelex) {
-  //   loadButtonelex.addEventListener('click', loadInnerPage);
-  // }
-
   // Define the function to navigate to the user"s home page
   function goToUserHomePage() {
     console.log('Button clicked!'); // For testing purposes
@@ -66,6 +39,19 @@ function init() {
       // Perform the logout action here, e.g., by redirecting to a logout endpoint
       window.location.href = '/logout';
     });
+  }
+
+  function goToFetchHomePage() {
+    console.log('Button clicked!'); // For testing purposes
+    // Redirect to the user"s home page
+    window.location.href = '/fetch-home'; // Replace with the actual URL for the user"s home page
+  }
+
+  var compareButton = document.getElementById('compareButton');
+  if (compareButton) {
+    compareButton.addEventListener('click', goToFetchHomePage);
+  } else {
+    console.error('Fetch Home page not found.');
   }
 
   function goToElexPage() {
@@ -229,6 +215,7 @@ function init() {
   var signupButton = document.getElementById('signupButton');
   var loginButton = document.getElementById('loginButton');
   var updateButton = document.getElementById('updateButton');
+  var compareButton = document.getElementById('compareButton');
 
   if (signupButton) {
     signupButton.addEventListener('click', registerUser);

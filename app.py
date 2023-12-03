@@ -223,6 +223,11 @@ def user_home():
     #Rendering User's home page
     return render_template('user_home.html')
 
+@app.route('/fetch-home')
+def fetch_home():
+    #Rendering User's home page
+    return render_template('fetch_home.html')
+
 @app.route('/user_profile')
 def user_profile():
     # Retrieve the email from the session if it exists
