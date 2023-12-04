@@ -223,6 +223,11 @@ def user_home():
     #Rendering User's home page
     return render_template('user_home.html')
 
+@app.route('/fetch-home')
+def fetch_home():
+    #Rendering User's home page
+    return render_template('fetch_home.html')
+
 @app.route('/user_profile')
 def user_profile():
     # Retrieve the email from the session if it exists
@@ -255,6 +260,21 @@ def update():
             
             else:
                 return "updation failed"    #Return a failure response
+            
+@app.route('/electronics')
+def electronics():
+    #Rendering electronics page
+    return render_template('electronics.html')
+
+@app.route('/clothing')
+def clothing():
+    #Rendering clothing page
+    return render_template('clothing.html')
+
+@app.route('/watches')
+def watches():
+    #Rendering watches page
+    return render_template('watches.html')
 
 @app.route('/logout')
 def logout():

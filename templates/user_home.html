@@ -6,13 +6,11 @@
     <title>Estimate Price Tracker</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style/styles.css') }}"
-    />
+      href="{{ url_for('static', filename='style/styles.css') }}" />
     <script defer src="{{ url_for('static', filename='index.js') }}"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   </head>
   <body>
     <section class="main-container2">
@@ -26,8 +24,7 @@
             data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -41,17 +38,31 @@
                   href="#"
                   aria-haspopup="true"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   Categories</a
                 >
                 <ul
                   class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li><a class="dropdown-item" href="#">Sub-item 1</a></li>
-                  <li><a class="dropdown-item" href="#">Sub-item 2</a></li>
-                  <li><a class="dropdown-item" href="#">Sub-item 3</a></li>
+                  aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0)"
+                      id="electronics"
+                      >Electronics</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/watches" id="watches"
+                      >Watches</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/clothing" id="clothing"
+                      >Clothing and Fashion</a
+                    >
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -64,22 +75,19 @@
                   href="#"
                   aria-haspopup="true"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   <img
                     src="{{ url_for('static', filename='assets/icons/user.jpg') }}"
                     alt="User-profile logo"
                     width="25"
                     height="25"
-                    class="rounded-pill"
-                  />
+                    class="rounded-pill" />
 
                   User Profile
                 </a>
                 <ul
                   class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
+                  aria-labelledby="navbarDropdownMenuLink">
                   <li>
                     <a class="dropdown-item" href="{{ url_for('user_profile')}}"
                       >View Profile</a
@@ -103,8 +111,7 @@
       <!-- carousel of images -->
       <div
         id="carouselExampleDark"
-        class="carousel carousel-dark slide mx-auto"
-      >
+        class="carousel carousel-dark slide mx-auto">
         <div class="carousel-indicators">
           <button
             type="button"
@@ -112,14 +119,12 @@
             data-bs-slide-to="0"
             class="active"
             aria-current="true"
-            aria-label="Slide 1"
-          ></button>
+            aria-label="Slide 1"></button>
           <button
             type="button"
             data-bs-target="#carouselExampleDark"
             data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
+            aria-label="Slide 2"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
@@ -128,8 +133,7 @@
               class="d-block w-50 text-center"
               height="150px"
               width="450px"
-              alt="Ebay logo"
-            />
+              alt="Ebay logo" />
           </div>
 
           <div class="carousel-item" data-bs-interval="2000">
@@ -138,36 +142,372 @@
               class="d-block w-50 text-center"
               height="150px"
               width="450px"
-              alt="Amazon logo"
-            />
+              alt="Amazon logo" />
           </div>
 
           <button
             class="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleDark"
-            data-bs-slide="prev"
-          >
+            data-bs-slide="prev">
             <span
               class="carousel-control-prev-icon bg-dark"
-              aria-hidden="true"
-            ></span>
+              aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
             class="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleDark"
-            data-bs-slide="next"
-          >
+            data-bs-slide="next">
             <span
               class="carousel-control-next-icon bg-dark"
-              aria-hidden="true"
-            ></span>
+              aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
+
+      <h2 class="productsTitle"><u> All Products</u></h2>
+
+      <div class="scroll-container">
+        <div class="card-group">
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="firstCard"
+            style="max-width: 18rem">
+            <div class="card-header">Watches</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/wristWatch.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Wrist Watch</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="firstCard"
+            style="max-width: 18rem">
+            <div class="card-header">Smartphone</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/pixel7a.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Google Pixel 7a Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Google Pixel 7a</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="secondCard"
+            style="max-width: 18rem">
+            <div class="card-header">Men's Football Cleat</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/footballCleats.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Sport shoes</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="thirdCard"
+            style="max-width: 18rem">
+            <div class="card-header">Women's Shirt</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/shirt.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Shirts</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="fourthCard"
+            style="max-width: 18rem">
+            <div class="card-header">Men's Hoodie</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/adidasHoodie.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Red Adidas Hoodie" />
+            <div class="card-body">
+              <h5 class="card-title">Adidas Red Hoodie</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-container">
+        <div class="card-group">
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="firstCard"
+            style="max-width: 18rem">
+            <div class="card-header">Laptop</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/lenovoLaptop.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Lenovo Thinkpad Laptop</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="firstCard"
+            style="max-width: 18rem">
+            <div class="card-header">Smartphone</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/iPhone13.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Google Pixel 7a Photo" />
+            <div class="card-body">
+              <h5 class="card-title">IPhone 13</h5>
+              <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+                Compare Prices
+              </button></a>
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="secondCard"
+            style="max-width: 18rem">
+            <div class="card-header">Women's Sweater</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/Sweater.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Red Sweater</h5>
+              <a href="/fetch-home"></a>
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  id="compareButton">
+                  Compare Prices
+                </button></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="thirdCard"
+            style="max-width: 18rem">
+            <div class="card-header">iWatch</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/iWatch.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="Watches Photo" />
+            <div class="card-body">
+              <h5 class="card-title">Shirts</h5>
+              <a href="/fetch-home">
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  id="compareButton">
+                  Compare Prices
+                </button></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="card border border-info shadow-0 bg-light mb-3"
+            id="sixthCard"
+            style="max-width: 18rem">
+            <div class="card-header">Men's Loafer</div>
+            <img
+              src="{{ url_for('static', filename='assets/images/DeYashopin.jpg') }}"
+              height="250px"
+              width="auto"
+              class="card-img-top"
+              alt="DeYashopin Loafer" />
+            <div class="card-body">
+              <h5 class="card-title">DeYashopin Men's Loafer</h5>
+              <a href="/fetch-home"
+                ><button
+                  type="button"
+                  class="btn btn-warning"
+                  id="compareButton">
+                  Compare Prices
+                </button></a
+              >
+              <!-- Container to display the fetch response -->
+              <div id="fetchResponse" class="mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <!-- Footer -->
+      <footer class="text-center text-lg-start text-white bg-dark">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Links -->
+          <section class="">
+            <!--Grid row-->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">
+                  Estimate It
+                </h6>
+                <div class="text-start">
+                  <p>
+                    Effortlessly manage project budgets with the Estimate Price
+                    Tracker.
+                  </p>
+                </div>
+              </div>
+              <!-- Grid column -->
+
+              <hr class="w-100 clearfix d-md-none" />
+
+              <hr class="w-100 clearfix d-md-none" />
+
+              <!-- Grid column -->
+              <hr class="w-100 clearfix d-md-none" />
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                <p><i class="fas fa-home mr-3"></i> Portland, OR 97201, US</p>
+                <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                <!-- Facebook -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #3b5998"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+
+                <!-- Twitter -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #55acee"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+
+                <!-- Google -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #dd4b39"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-google"></i
+                ></a>
+
+                <!-- Instagram -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #ac2bac"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+
+                <!-- Linkedin -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #0082ca"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <!-- Github -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #333333"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <!--Grid row-->
+          </section>
+          <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/"
+            >MDBootstrap.com</a
+          >
+        </div>
+        <!-- Copyright -->
+      </footer>
     </section>
   </body>
 </html>
