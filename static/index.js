@@ -8,9 +8,7 @@ function init() {
   }
   // Function to open the update modal
   function openUpdateModal() {
-    var modal = new bootstrap.Modal(
-      document.getElementById("modalUpdateForm")
-    );
+    var modal = new bootstrap.Modal(document.getElementById("modalUpdateForm"));
     modal.show();
   }
 
@@ -46,7 +44,7 @@ function init() {
   // Attach click event listeners to the signup and login links
   var signUpLink = document.getElementById("signUpLink");
   var loginLink = document.getElementById("loginLink");
-  var updateLink = document.getElementById("updateLink")
+  var updateLink = document.getElementById("updateLink");
 
   if (signUpLink) {
     signUpLink.addEventListener("click", openSignupModal);
@@ -58,6 +56,15 @@ function init() {
   if (updateLink) {
     updateLink.addEventListener("click", openUpdateModal);
   }
+
+  const connectUsEmailLink = document.getElementById("connectUsEmailLink");
+
+  connectUsEmailLink.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Open the email dialog
+    window.location.href = "mailto:connect@estimateit.com";
+  });
 
   // Function to register a new user
   function registerUser() {
@@ -119,9 +126,7 @@ function init() {
       .then((response) => response.text())
       .then((data) => {
         console.log(data);
-        var updationResponse = document.getElementById(
-          "updationResponse"
-        );
+        var updationResponse = document.getElementById("updationResponse");
         if (updationResponse) {
           updationResponse.innerHTML = data;
         }
@@ -187,11 +192,11 @@ function readmore() {
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Read more..."; 
+    btnText.innerHTML = "Read more...";
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
+    btnText.innerHTML = "Read less";
     moreText.style.display = "inline";
   }
 }

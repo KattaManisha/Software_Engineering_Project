@@ -47,11 +47,12 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="javascript:void(0)"
+                      href="/electronics"
                       id="electronics"
                       >Electronics</a
                     >
                   </li>
+                  <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="/watches" id="watches"
                       >Watches</a
@@ -106,69 +107,6 @@
       </nav>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <h1 class="title">Estimate Price Tracker</h1>
-
-      <!-- carousel of images -->
-      <div
-        id="carouselExampleDark"
-        class="carousel carousel-dark slide mx-auto">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img
-              src="{{ url_for('static', filename='assets/images/ebay.png') }}"
-              class="d-block w-50 text-center"
-              height="150px"
-              width="450px"
-              alt="Ebay logo" />
-          </div>
-
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="{{ url_for('static', filename='assets/images/amazon.png') }}"
-              class="d-block w-50 text-center"
-              height="150px"
-              width="450px"
-              alt="Amazon logo" />
-          </div>
-
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide="prev">
-            <span
-              class="carousel-control-prev-icon bg-dark"
-              aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide="next">
-            <span
-              class="carousel-control-next-icon bg-dark"
-              aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-
-      <h2 class="productsTitle"><u> All Products</u></h2>
 
       <div class="scroll-container">
         <div class="card-group">
@@ -390,124 +328,91 @@
             </div>
           </div>
         </div>
+
+        <div class="card-group">
+          <div
+          class="card border border-info shadow-0 bg-light mb-3"
+          id="thirdCard"
+          style="max-width: 18rem">
+          <div class="card-header">Men's Jacket</div>
+          <img
+            src="{{ url_for('static', filename='assets/images/columbiaJacket.jpg') }}"
+            height="250px"
+            width="auto"
+            class="card-img-top"
+            alt="Watches Photo" />
+          <div class="card-body">
+            <h5 class="card-title">Columbia Men's Jacket</h5>
+            <a href="/fetch-home"
+                ><button type="button" class="btn btn-warning" id="compareButton">
+              Compare Prices
+            </button></a>
+          </div>
+        </div>
+        </div>
       </div>
 
       <br />
       <br />
-      <!-- Footer -->
-      <footer class="text-center text-lg-start text-white bg-dark">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <!-- Section: Links -->
-          <section class="">
-            <!--Grid row-->
-            <div class="row">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">
-                  Estimate It
-                </h6>
-                <div class="text-start">
-                  <p>
-                    Effortlessly manage project budgets with the Estimate Price
-                    Tracker.
-                  </p>
-                </div>
+
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-white bg-dark">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: Links -->
+                <section class="">
+                  <!--Grid row-->
+                  <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 class="text-uppercase mb-4 font-weight-bold">
+                        Estimate It
+                      </h6>
+                      <div class="text-start">
+                        <p>
+                          Effortlessly manage project budgets with the Estimate Price
+                          Tracker.
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Grid column -->
+      
+                    <hr class="w-100 clearfix d-md-none" />
+      
+                    <hr class="w-100 clearfix d-md-none" />
+      
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none" />
+                    <!-- Grid column -->
+      
+                    <!-- Grid column -->
+                
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <div id="contactUsDiv">
+                        <p>
+                          Have questions, suggestions, or feedback <br><br>
+                          Please email us at <a class="text-white" id = "connectUsEmailLink" href= "mailto:connect@estimateit.com">connect@estimateit.com</a>
+                        </p>
+                      </div>
+                  </div>  
+                  </div>
+                  <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
               </div>
-              <!-- Grid column -->
-
-              <hr class="w-100 clearfix d-md-none" />
-
-              <hr class="w-100 clearfix d-md-none" />
-
-              <!-- Grid column -->
-              <hr class="w-100 clearfix d-md-none" />
-
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                <p><i class="fas fa-home mr-3"></i> Portland, OR 97201, US</p>
-                <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+              <!-- Grid container -->
+      
+              <!-- Copyright -->
+              <div
+                class="text-center p-3"
+                style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2023 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/"
+                  >MDBootstrap.com</a
+                >
               </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
-
-                <!-- Facebook -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #3b5998"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-
-                <!-- Twitter -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #55acee"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-
-                <!-- Google -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #dd4b39"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-google"></i
-                ></a>
-
-                <!-- Instagram -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #ac2bac"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-
-                <!-- Linkedin -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #0082ca"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-                <!-- Github -->
-                <a
-                  class="btn btn-primary btn-floating m-1"
-                  style="background-color: #333333"
-                  href="#!"
-                  role="button"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </div>
-            </div>
-            <!--Grid row-->
-          </section>
-          <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2023 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
-          >
-        </div>
-        <!-- Copyright -->
-      </footer>
+              <!-- Copyright -->
+            </footer>
     </section>
   </body>
 </html>
