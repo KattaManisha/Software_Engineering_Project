@@ -155,7 +155,7 @@ a .navbar-brand {
 }
 
 .card-group {
-  margin-left: 10%;
+  margin-left: 5%;
   display: inline-flex;
   white-space: nowrap;
 }
@@ -224,4 +224,57 @@ a .navbar-brand {
 
 .card-title {
   white-space: normal;
+}
+
+.slider {
+  background-color: #2f3c7e;
+  color: #fbeaeb;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.container {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.compare-logo {
+  text-align: center;
+}
+
+.compare-logo img {
+  width: 200px;
+}
+
+.logo-amazon {
+  padding: 30px;
+}
+
+#more {
+  display: none;
+}
+
+.container button {
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: none;
+  border: 0;
+  color: #1c0ed5;
+  box-shadow: none;
+}
+
+footer {
+  padding: 40px 0;
+  color: white;
+  background: black;
+}
+
+footer a {
+  color: white;
+}
+
+
+#contactUsDiv {
+  width: 200px;
+  white-space: nowrap;
 }
