@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Prices</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Compare Prices</h1>
+
+    <table>
+      <tr>
+        <th>Website</th>
+        <th>Website URL</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Amazon</td>
+        <td>{{amazon_web_url}}</td>
+        <td>{{amazon_product_price}}</td>
+      </tr>
+      <tr>
+        <td>eBay</td>
+        <td>{{ebay_web_url}}</td>
+        <td>{{ebay_product_price}}</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </table>
+  </body>
+</html>

@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import psycopg2
+from PriceComparison.price_comparison import get_product_price_amazon, get_product_price_ebay
 
 app = Flask(__name__)
-app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I' #TODO Replace this with your own generated key
+app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I'
 
 # Access the secret key from the app context
 secret_key = app.config['SECRET_KEY']
@@ -283,7 +284,16 @@ def logout():
     # Redirect the user to the home page or login page
     return redirect(url_for('home'))
 
+@app.route('/compare_prices', methods=['GET'])
+def compare_prices():
+    amazon_url = "https://a.co/d/8wqHhMS"
+    ebay_url = "https://www.ebay.com/itm/325661593466?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=1PO9jDhpTTO&sssrc=4429486&ssuid=8jcvtrvssmq&var=&widget_ver=artemis&media=WHATS_APP"
+
+    amazon_web_url, amazon_product_price = get_product_price_amazon(amazon_url)
+    ebay_web_url, ebay_product_price = get_product_price_ebay(ebay_url)
+
+    return render_template('compare_prices.html',ebay_product_price = ebay_product_price, ebay_web_url = ebay_web_url,amazon_product_price = amazon_product_price, amazon_web_url = amazon_web_url)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-    
-
