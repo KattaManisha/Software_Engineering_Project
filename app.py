@@ -190,12 +190,11 @@ def register():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
-
         conn = connect_to_db()
 
         if conn:
             if register_user(conn, username, first_name, last_name, email, password):
-                return "Registration successful", 200  # Return a success response with HTTP status 200
+                return redirect(url_for('user_home')) # Return a success response with HTTP status 200
             else:
                 return "Registration failed", 400  # Return a failure response with HTTP status 400
         else:
@@ -234,7 +233,6 @@ def user_profile():
     # Retrieve the email from the session if it exists
     email = session.get('email')
     
-
     if email:
         user = get_user_from_database(email)
         if user:
@@ -252,13 +250,11 @@ def update():
         last_name = request.form['last_name']
         email=session.get('email')
         
-
         conn = connect_to_db()
 
         if conn:
             if update_user(conn, username, first_name, last_name, email ):
                 return redirect(url_for('user_profile'))
-            
             else:
                 return "updation failed"    #Return a failure response
             
@@ -286,9 +282,9 @@ def logout():
 
 @app.route('/compare_prices', methods=['GET'])
 def compare_prices():
-    amazon_url = "https://a.co/d/8wqHhMS"
-    ebay_url = "https://www.ebay.com/itm/325661593466?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=1PO9jDhpTTO&sssrc=4429486&ssuid=8jcvtrvssmq&var=&widget_ver=artemis&media=WHATS_APP"
-
+    amazon_url = request.args.get('amazon_url')
+    ebay_url = request.args.get('ebay_url')
+    
     amazon_web_url, amazon_product_price = get_product_price_amazon(amazon_url)
     ebay_web_url, ebay_product_price = get_product_price_ebay(ebay_url)
 
