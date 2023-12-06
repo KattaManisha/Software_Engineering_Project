@@ -278,3 +278,36 @@ footer a {
   width: 200px;
   white-space: nowrap;
 }
+
+/* styles.css */
+.custom-table {
+  border-spacing: 0 10px; /* Spacing between rows */
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #0d0d0d;
+  padding: 10px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background color */
+}
+
+.bold-price{
+  font-weight: bold;
+}
+
+.main-container3{
+  margin-bottom: 300px;
+}
+
+.profile-container{
+  margin-bottom: 50px;
+}
