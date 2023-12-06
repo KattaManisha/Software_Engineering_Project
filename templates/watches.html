@@ -6,11 +6,13 @@
     <title>Watches</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style/styles.css') }}" />
+      href="{{ url_for('static', filename='style/styles.css') }}"
+    />
     <script defer src="{{ url_for('static', filename='index.js') }}"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <section class="main-container2">
@@ -26,17 +28,20 @@
         <div
           class="card border border-info shadow-0 bg-light mb-3"
           id="firstCard"
-          style="max-width: 18rem">
+          style="max-width: 18rem"
+        >
           <div class="card-header">Watches</div>
           <img
             src="{{ url_for('static', filename='assets/images/wristWatch.jpg') }}"
             height="250px"
             width="auto"
             class="card-img-top"
-            alt="Watches Photo" />
+            alt="Watches Photo"
+          />
           <div class="card-body">
             <h5 class="card-title">Wrist Watch</h5>
-            <a href="/fetch-home"
+            <a
+              href="/compare_prices?amazon_url=https://www.amazon.com/dp/B0C5X4BFZQ?ref_=cm_sw_r_cso_wa_apin_dp_9ZD6JW4J5K9QNN9XTCCV&cafHiResImg=1&language=en-US&ebay_url=https://www.ebay.com/itm/295949946326?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=wx7jr6sxqye&sssrc=4429486&ssuid=8jcvtrvssmq&var=594133639624&widget_ver=artemis&media"
               ><button type="button" class="btn btn-warning" id="compareButton">
                 Compare Prices
               </button></a
@@ -46,17 +51,20 @@
         <div
           class="card border border-info shadow-0 bg-light mb-3"
           id="thirdCard"
-          style="max-width: 18rem">
+          style="max-width: 18rem"
+        >
           <div class="card-header">iWatch</div>
           <img
             src="{{ url_for('static', filename='assets/images/iWatch.jpg') }}"
             height="250px"
             width="auto"
             class="card-img-top"
-            alt="Watches Photo" />
+            alt="Watches Photo"
+          />
           <div class="card-body">
-            <h5 class="card-title">Apple</h5>
-            <a href="/fetch-home"
+            <h5 class="card-title">Apple Watch</h5>
+            <a
+              href="/compare_prices?amazon_url=https://a.co/d/hPrvfZA&ebay_url=https://www.ebay.com/itm/394830131159?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=EobfBO-ySn2&sssrc=4429486&ssuid=8jcvtrvssmq&var=663396013623&widget_ver=artemis&media=WHATS_APP"
               ><button type="button" class="btn btn-warning" id="compareButton">
                 Compare Prices
               </button></a

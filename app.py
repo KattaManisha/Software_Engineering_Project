@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import psycopg2
+from PriceComparison.price_comparison import get_product_price_amazon, get_product_price_ebay
 
 app = Flask(__name__)
-app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I' #TODO Replace this with your own generated key
+app.secret_key = b'\x98t\xc9\x88N\xc6\xd1\xa9\xb2\xbdK\x91\x00\xfa\xbc\xd3\x84\xd6\x89\x9dwe\x13I'
 
 # Access the secret key from the app context
 secret_key = app.config['SECRET_KEY']
@@ -189,12 +190,11 @@ def register():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
-
         conn = connect_to_db()
 
         if conn:
             if register_user(conn, username, first_name, last_name, email, password):
-                return "Registration successful", 200  # Return a success response with HTTP status 200
+                return redirect(url_for('user_home')) # Return a success response with HTTP status 200
             else:
                 return "Registration failed", 400  # Return a failure response with HTTP status 400
         else:
@@ -233,7 +233,6 @@ def user_profile():
     # Retrieve the email from the session if it exists
     email = session.get('email')
     
-
     if email:
         user = get_user_from_database(email)
         if user:
@@ -251,13 +250,11 @@ def update():
         last_name = request.form['last_name']
         email=session.get('email')
         
-
         conn = connect_to_db()
 
         if conn:
             if update_user(conn, username, first_name, last_name, email ):
                 return redirect(url_for('user_profile'))
-            
             else:
                 return "updation failed"    #Return a failure response
             
@@ -283,7 +280,16 @@ def logout():
     # Redirect the user to the home page or login page
     return redirect(url_for('home'))
 
+@app.route('/compare_prices', methods=['GET'])
+def compare_prices():
+    amazon_url = request.args.get('amazon_url')
+    ebay_url = request.args.get('ebay_url')
+    
+    amazon_web_url, amazon_product_price = get_product_price_amazon(amazon_url)
+    ebay_web_url, ebay_product_price = get_product_price_ebay(ebay_url)
+
+    return render_template('compare_prices.html',ebay_product_price = ebay_product_price, ebay_web_url = ebay_web_url,amazon_product_price = amazon_product_price, amazon_web_url = amazon_web_url)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-    
-
